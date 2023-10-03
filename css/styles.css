@@ -415,12 +415,10 @@ svg {
 .customers-section {
   padding-top: 120px;
   padding-bottom: 120px;
-  text-align: center;
 }
 
 .customers-title {
   color: var(--navy-blue);
-  text-align: center;
   font-size: 36px;
   line-height: 1.11;
   margin-bottom: 72px;
@@ -429,13 +427,11 @@ svg {
 .customers-list {
   display: flex;
   gap: 24px;
-  justify-content: center;
 }
 
 .customers-list-item {
   width: calc((100% - 120px) / 6);
   height: 88px;
-  padding: 16px 32px;
 }
 
 .customers-link {
@@ -495,10 +491,15 @@ svg {
   border: 1px solid var(--cornflower);
   border-radius: 4px;
   padding: 12px 24px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-filter-list-item:hover,
-.portfolio-filter-list-item:focus {
+.portfolio-filter-list-btn:hover,
+.portfolio-filter-list-btn:focus {
   color: #ffffff;
   background-color: #404bbf;
   border: 1px solid transparent;
@@ -671,7 +672,7 @@ svg {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition-delay: 200ms;
+  /* transition-delay: 200ms; */
 }
 
 .modal {
@@ -685,9 +686,9 @@ svg {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  opacity: 1;
+  /* opacity: 1; */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 24px;
+  /* padding: 24px; */
 }
 
 .backdrop.is-hidden .modal {
@@ -700,19 +701,19 @@ svg {
   position: absolute;
   top: 24px;
   right: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--navy-blue);
-  padding: 0;
-  background-color: var(--cornflower);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
   width: 24px;
   height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* color: var(--navy-blue); */
 }
 
 .modal-btn:hover,
@@ -723,7 +724,7 @@ svg {
 }
 
 .modal-btn-icon {
-  color: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-container {
