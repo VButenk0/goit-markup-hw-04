@@ -149,7 +149,7 @@ svg {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--navy-blue);
+  color: #404bbf;
   padding: 24px 0;
   display: block;
 
@@ -195,6 +195,10 @@ svg {
 .contacts:hover,
 .contacts:focus {
   color: var(--ocean);
+}
+
+.contacts-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-section {
@@ -382,16 +386,23 @@ svg {
   margin-bottom: 32px;
 }
 
-.team-card-socials-link {
-  color: var(--cloud);
-  background-color: var(--iris);
-  border-radius: 50%;
+.team-card-socials-item {
   border: transparent;
   padding: 12px;
   width: 40px;
   height: 40px;
-  justify-content: center;
+}
+
+.team-card-socials-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  border-radius: 50%;
+  display: flex;
   align-items: center;
+  justify-content: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-card-socials-link:hover,
@@ -400,14 +411,7 @@ svg {
 }
 
 .team-card-socials-icon {
-  fill: currentColor;
-  width: 100%;
-  height: 100%;
-  border-color: var(--iris);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  fill: var(--cloud);
 }
 
 .customers-section {
@@ -420,10 +424,7 @@ svg {
   color: var(--navy-blue);
   text-align: center;
   font-size: 36px;
-  font-weight: 700;
-  line-height: 1.11px;
-  letter-spacing: 0.045em;
-  text-transform: capitalize;
+  line-height: 1.11;
   margin-bottom: 72px;
 }
 
@@ -434,16 +435,33 @@ svg {
 }
 
 .customers-list-item {
-  color: var(--light-slate);
-  border-radius: 4px;
-  border: 1px solid var(--light-slate);
+  width: calc((100% - 120px) / 6);
+  height: 88px;
   padding: 16px 32px;
 }
 
-.customers-list-item:hover,
-.customers-list-item:focus {
-  color: var(--ocean);
-  border: 1px solid var(--ocean);
+.customers-link {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-slate);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  color: #404bbf;
+  border-color: #404bbf;
+}
+
+.customers-icon {
+  fill: currentColor;
 }
 
 /*Portfolio*/
@@ -460,7 +478,14 @@ svg {
   margin-bottom: 72px;
 }
 
-.portfolio-filter-list-item {
+.portfolio-filter-item {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-filter-list-btn {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -479,6 +504,8 @@ svg {
   color: #ffffff;
   background-color: #404bbf;
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-card-list {
@@ -494,6 +521,13 @@ svg {
 
 .portfolio-card-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card-link:hover,
+.portfolio-card-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-card-link:hover .overlay-text,
@@ -519,6 +553,7 @@ svg {
   height: 100%;
 
   transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--iris);
   padding: 40px 32px;
 }
@@ -539,7 +574,7 @@ svg {
 
 .footer-container {
   display: flex;
-  justify-content: baseline;
+  align-items: baseline;
 }
 
 .footer-text-container {
@@ -585,9 +620,9 @@ svg {
   color: var(--white);
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.5px;
-  letter-spacing: 0.2px;
-  height: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
 }
 
 .footer-socials-list {
@@ -596,18 +631,23 @@ svg {
 }
 
 .footer-socials-list-item {
-  background-color: var(--iris);
-  border-radius: 50%;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding: 8px;
   width: 40px;
   height: 40px;
 }
 
-.footer-socials-list-item:hover,
-.footer-socials-list-item:focus {
+.footer-socials-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-socials-link:hover,
+.footer-socials-link:focus {
   background-color: var(--green);
 }
 
@@ -619,13 +659,14 @@ svg {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--idx-modal);
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* z-index: var(--idx-modal);
   backdrop-filter: blur(2px);
-  transition: opacity 200ms linear, visibility 200ms linear;
-  transition-delay: 0s;
+  transition-delay: 0s; */
 }
 
 .backdrop.is-hidden {
@@ -639,14 +680,15 @@ svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%) scale(1);
   width: 408px;
   min-height: 584px;
-  border-radius: 4px;
   background: var(--dairy);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   opacity: 1;
-  transition: transform 300ms cubic-bezier(0.59, -0.21, 0, 1.48) 200ms,
-    opacity 300ms cubic-bezier(0.59, -0.21, 0, 1.48) 200ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 24px;
 }
 
@@ -671,7 +713,8 @@ svg {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  transition: color var(--trns-fast);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
@@ -715,13 +758,12 @@ svg {
 
 .form-input {
   padding: 11px 16px;
-  width: ;
-  height: ;
   border-radius: 4px;
   border: 1px solid var(--navy-blue-modal);
   color: var(--navy-blue);
 }
 
-.icon {
+.modal-btn-icon {
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
